@@ -1,3 +1,7 @@
+/* === Нормалізація === */
+@import "normalize.css";
+
+/* === Глобальні стилі === */
 :root {
   --background: #ffffff;
   --foreground: #171717;
