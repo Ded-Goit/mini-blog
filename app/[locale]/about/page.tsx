@@ -1,7 +1,11 @@
 import en from "@/lib/dictionaries/en.json";
 import uk from "@/lib/dictionaries/uk.json";
 
-export default function About({ params }: { params: { locale: string } }) {
+interface Props {
+  params: { locale: string };
+}
+
+export default function About({ params }: Props) {
   const t = params.locale === "uk" ? uk : en;
 
   return (
