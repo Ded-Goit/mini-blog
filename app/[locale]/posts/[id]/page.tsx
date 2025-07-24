@@ -12,11 +12,11 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params,
 }: {
-  params: { id: string; locale: string };
+  params: Promise<{ id: string; locale: string }>;
 }) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
-  );
+  const { id } = await params;
+
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   if (!res.ok) throw new Error("Post not found");
 
   const post: Post = await res.json();

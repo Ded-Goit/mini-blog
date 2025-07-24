@@ -1,8 +1,13 @@
 import en from "@/lib/dictionaries/en.json";
 import uk from "@/lib/dictionaries/uk.json";
 
-export default function About({ params }: { params: { locale: string } }) {
-  const t = params.locale === "uk" ? uk : en;
+export default async function About({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = locale === "uk" ? uk : en;
 
   return (
     <section>
