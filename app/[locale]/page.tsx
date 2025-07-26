@@ -1,3 +1,4 @@
+//app/[locale]/page.tsx
 import PostList from "@/components/PostList";
 import { Post } from "@/types/post";
 
