@@ -1,5 +1,6 @@
 import en from "@/lib/dictionaries/en.json";
 import uk from "@/lib/dictionaries/uk.json";
+import styles from "./about.module.css";
 
 export default async function About({
   params,
@@ -10,9 +11,11 @@ export default async function About({
   const t = locale === "uk" ? uk : en;
 
   return (
-    <section>
-      <h1>{t.about}</h1>
-      <p>This is a mini-blog project built with Next.js App Router.</p>
-    </section>
+    <>
+      <div className={styles.container}>
+        <h1 className={styles.title}>{t.about.title}</h1>
+        <p className={styles.text}>{t.about.description}</p>
+      </div>
+    </>
   );
 }
